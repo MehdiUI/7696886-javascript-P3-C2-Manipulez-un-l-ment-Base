@@ -10,21 +10,27 @@
  * @param {number} nbMotsProposes : le nombre de mots proposés à l'utilisateur
  */
 function afficherResultat(score, nbMotsProposes) {
+    let spanScore = document.querySelector(".zoneScore span")
+
+    let affichageScore=  `${score} / ${nbMotsProposes}`
+
+    spanScore.innerText = affichageScore
     console.log("Votre score est de " + score + " sur " + nbMotsProposes)
 }
 
-/**
- * Cette fonction demande à l'utilisateur de choisir entre "mots" et "phrases" et retourne le choix de l'utilisateur
- * @return {string} : le choix de l'utilisateur, ce choix est nécessairement "mots" ou "phrases
- */
-function choisirPhrasesOuMots() {
+
+
+// /**
+//  * Cette fonction demande à l'utilisateur de choisir entre "mots" et "phrases" et retourne le choix de l'utilisateur
+//  * @return {string} : le choix de l'utilisateur, ce choix est nécessairement "mots" ou "phrases
+ function choisirPhrasesOuMots() {
     // Tant que l'utilisateur n'a pas saisi "mots" ou "phrases", on lui redemande de saisir un choix
-    let choix = prompt("Avec quelle liste désirez-vous jouer : 'mots' ou 'phrases' ?")
-    while (choix !== "mots" && choix !== "phrases") {
+     let choix = prompt("Avec quelle liste désirez-vous jouer : 'mots' ou 'phrases' ?")
+     while (choix !== "mots" && choix !== "phrases") {
         choix = prompt("Avec quelle liste désirez-vous jouer : 'mots' ou 'phrases' ?")
-    }
-    return choix
-}
+     }
+     return choix
+ }
 
 /**
  * Cette fonction lance la boucle de jeu, c'est à dire qu'elle demande à l'utilisateur de saisir tous les mots
